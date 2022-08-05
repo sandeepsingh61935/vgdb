@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL : 'https://api.rawg.io/api/games?key=629afbc62ab74cd5bd92b9db0c970c4a'
 };
 
 /*

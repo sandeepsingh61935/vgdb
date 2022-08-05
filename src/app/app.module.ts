@@ -13,10 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomeComponent } from './home/home.component';
+import { HttpComponent } from './services/http/http.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HomeComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,

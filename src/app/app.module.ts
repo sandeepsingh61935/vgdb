@@ -16,12 +16,17 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { HomeComponent } from './components/home/home.component';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
+import { DetailsComponent } from './components/details/details.component';
+import { GaugeDefaults } from 'angular-gauge/gauge-defaults.service';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    AppComponent
+    AppComponent,
+    DetailsComponent,
+    GameTabsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor'
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    GaugeModule,
+    GaugeModule.forRoot(),
     MatTabsModule,
     MatIconModule,
     MatButtonModule,

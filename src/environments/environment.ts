@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BASE_URL : 'https://api.rawg.io/api'
+  BASE_URL : 'https://api.rawg.io/api',
+  PLACEHOLDER_URL: 'https://image.shutterstock.com/image-vector/no-image-vector-symbol-missing-260nw-1310632172.jpg'
 };
 
 /*

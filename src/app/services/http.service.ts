@@ -40,4 +40,10 @@ export class HttpService {
       })
     );
   }
+
+  getSearchResults(search: string): Observable<APIResponse<Game>> {
+    return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
+      params: new HttpParams().set('search', search),
+    });
+  }
 }

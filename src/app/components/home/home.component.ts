@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +37,9 @@ export class HomeComponent implements OnInit ,OnDestroy{
       getGamelist(sort, search).
       subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
-        console.log(this.games)
+        for(let game of this.games) {
+          game.background_image = !game.background_image ? `${env.PLACEHOLDER_URL}` : game.background_image;
+        }
       }
       );
   }

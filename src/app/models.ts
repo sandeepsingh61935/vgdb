@@ -25,6 +25,7 @@ export interface APIResponse<T> {
  interface ParentPlatform {
     platform: {
         slug : string;
+        name: string;
     }
 }
  interface Publisher {

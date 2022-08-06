@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
-
+import { environment as env } from 'src/environments/environment';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -35,9 +35,11 @@ export class DetailsComponent implements OnInit, OnDestroy {
           getGame(id).
           subscribe((game: Game) => {
             this.game = game;
+            this.game.background_image = !this.game.background_image ? `${env.PLACEHOLDER_URL}` : this.game.background_image;
+
             setTimeout(() => {
               this.gameRating = this.game.metacritic;
-            },1000);
+            },300);
           });
   }
 

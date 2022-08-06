@@ -1,8 +1,10 @@
 <div class="filter">
     <mat-form-field>
         <mat-label>Sort</mat-label>
-        <mat-select name="sort" panelClass="sort-select"  [(ngModel)]="sort">
-            <mat-option value="-empty"></mat-option>
+        <mat-select 
+            panelClass="sort-select"
+            [(ngModel)]="sort"
+            (selectionChange)="searchGames(sort)">
            <mat-option value="-name">Name</mat-option>
            <mat-option value="-released"> Released</mat-option>
            <mat-option value="-added"> Added</mat-option>
@@ -14,21 +16,36 @@
     </mat-form-field>
 
     <div class="games">
-        <div class="game">
-            <div class="game-thumb-container">
-                <img class="game-thumbnail" src="https://images.igdb.com/igdb/image/upload/t_cover_big/nocover.jpg" alt="thumbnail"/>
-            </div>
-
-            <div class="game-description">
-                <div class="game-name">
-                    <h2>Game Name</h2>
+        <ng-container *ngFor="let game of games"> 
+            <div class="game">
+                <div class="game-thumb-container">
+                    <img 
+                    *ngIf="game.background_image"
+                        class="game-thumbnail"
+                        src= "{{game.background_image}}"
+                        alt="thumbnail"
+                    />
+                    *ngIf="!game.background_image"
+                        class="game-thumbnail"
+                        src= "https://via.placeholder.com/160"
+                        alt="thumbnail"
                 </div>
-                <div class="game-platforms">
-                    <div class="game-platform">
-                        <h2>xbox</h2>
+    
+                <div class="game-description">
+                    <p class="game-name">
+                       {{game.name}} 
+                    </p>
+                    <div class="game-platforms">
+                        <img
+                            *ngFor="let platform of game.parent_platforms"
+                            class="game-platform"
+                            src="assets/images/platforms/{{platform.platform.slug}}.svg"
+                            alt="slug"     
+                        /> 
                     </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
+        
     </div>
 </div>

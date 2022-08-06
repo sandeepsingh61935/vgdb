@@ -23,7 +23,7 @@ export interface APIResponse<T> {
 
  interface ParentPlatform {
     platform: {
-        name : string;
+        slug : string;
     }
 }
  interface Publisher {

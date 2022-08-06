@@ -16,7 +16,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   public routeSub!: Subscription;
   public gameSub!: Subscription;
-
+  public environ = env;
   constructor(private activatedRoute: ActivatedRoute ,
     private httpService: HttpService)   { }
 

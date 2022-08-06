@@ -1,10 +1,17 @@
 <div class="details">
   <div class="game-banner">
-    <img
-      class="game-banner-img"
-      src="{{game.background_image}}"
-      alt="banner"
+
+    <img 
+    *ngIf="game.background_image"
+        class="game-banner-img"
+        src= "{{game.background_image}}"
+        alt="banner"
     />
+    <img
+    *ngIf="!game.background_image"
+        class="game-banner-img"
+        src= "{{environ.PLACEHOLDER_URL}}"
+        alt="banner"/>
   </div>
   <div class="game-content">
     <div class="details-wrapper">

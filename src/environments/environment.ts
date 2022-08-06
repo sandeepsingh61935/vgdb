@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   BASE_URL : 'https://api.rawg.io/api',
-  PLACEHOLDER_URL: 'https://image.shutterstock.com/image-vector/no-image-vector-symbol-missing-260nw-1310632172.jpg'
+  PLACEHOLDER_URL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGhyhvlcrVRcsrCoJATCBMv5B3Y5woM_eMuAHslzAXmA&s'
 };
 
 /*

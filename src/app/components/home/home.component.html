@@ -1,20 +1,3 @@
-<div class="filter">
-    <mat-form-field>
-        <mat-label>Sort</mat-label>
-        <mat-select 
-            panelClass="sort-select"
-            [(ngModel)]="sort"
-            (selectionChange)="searchGames(sort)">
-           <mat-option value="-name">Name</mat-option>
-           <mat-option value="-released"> Released</mat-option>
-           <mat-option value="-added"> Added</mat-option>
-           <mat-option value="-rating"> Rating </mat-option>
-           <mat-option value="-popularity"> Popularity </mat-option>
-           <mat-option value="-metacritic"> MetaCritic</mat-option>
-
-        </mat-select>
-    </mat-form-field>
-</div>
 <div class="games">
     <ng-container *ngFor="let game of games"> 
         <div class="game" (click)="openGameDetails(game.id)">
@@ -48,3 +31,4 @@
         </div>
     </ng-container>
 </div>
+<app-search-bar></app-search-bar>

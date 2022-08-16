@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit ,OnDestroy{
   public routeSubsription: Subscription | undefined;
   public gameSubsription: Subscription | undefined;
   public environ = env;
+
+  @Input() searchResult!: EventEmitter<string>;
   constructor(
     private httpService: HttpService,
     private router: Router,

@@ -1,7 +1,26 @@
 <div class="search-container">
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)" >
         <span class = "logo" routerLink="/">VGDB</span>
-        <input class="search-input" name="search" ngModel type="text" placeholder="Search...Games">
-        <button class="search-button" type="submit">Search</button>
+        <input class="search-input" name="search" ngModel type="text" placeholder="Search...Games" #searchItem>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>Sort</mat-label>
+                <mat-select 
+                    panelClass="sort-select"
+                    [(ngModel)]="sort"
+                    (selectionChange)="searchGames(sort)">
+                   <mat-option value="-name">Name</mat-option>
+                   <mat-option value="-released"> Released</mat-option>
+                   <mat-option value="-added"> Added</mat-option>
+                   <mat-option value="-rating"> Rating </mat-option>
+                   <mat-option value="-popularity"> Popularity </mat-option>
+                   <mat-option value="-metacritic"> MetaCritic</mat-option>
+        
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button class="search-button" type="submit" (click)="searchGames(searchItem.value)">Search</button>
     </form>
 </div>
+
+<app-home [searchResult]="searchEvent"></app-home>
